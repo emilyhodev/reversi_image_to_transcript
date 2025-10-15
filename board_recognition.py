@@ -225,9 +225,9 @@ def getRidgeEdge(distComponent, maxCoord, direction):
 #
 # 定数値
 #
-_KERNEL3 = np.ones((3, 3), dtype=np.int)
-_KERNEL5 = np.ones((5, 5), dtype=np.int)
-_KERNEL9 = np.ones((9, 9), dtype=np.int)
+_KERNEL3 = np.ones((3, 3), dtype=np.int64)
+_KERNEL5 = np.ones((5, 5), dtype=np.int64)
+_KERNEL9 = np.ones((9, 9), dtype=np.int64)
 
 ###
 ### 認識用のクラスの定義
@@ -582,7 +582,7 @@ class RealBoardRecognizer(BaseRecognizer):
         # 画像の長辺一杯が盤面だとして、その5% * 1/8 = 0.625%程度が線の最大の太さ
         # 両サイドから膨張させて線を消したいので、その半分程度の0.35%膨張させることにする。
         kernelSize = max(1, int(0.0035 * max(width, height))) * 2 + 1
-        kernel = np.ones((kernelSize, kernelSize), dtype=np.int)
+        kernel = np.ones((kernelSize, kernelSize), dtype=np.int64)
         green = cv2.dilate(green, kernel)
         green = cv2.erode(green, kernel)
         
