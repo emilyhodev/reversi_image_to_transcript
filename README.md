@@ -1,5 +1,4 @@
-# reversi_recognition
-リバーシの盤面認識 (forked)
+# Reversi Image to Transcript
 
 # How to run?
 Download the .zip, extract and run the .exe file.
